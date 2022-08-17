@@ -352,7 +352,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/02.Scripts/00.Common/LoadingScenceManager.cs"
-"Assets/02.Scripts/01.Start/GameStart.cs"
+"Assets/02.Scripts/GameSettingManager.cs"
+"Assets/02.Scripts/GameStart.cs"
 "Assets/02.Scripts/TimerPanel.cs"
 -langversion:9.0
 
