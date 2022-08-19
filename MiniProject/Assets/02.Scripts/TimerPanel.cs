@@ -27,7 +27,7 @@ public class TimerPanel : MonoBehaviour
     private void Update()
     {
         TimerUpdate();
-        if ((int)fTime <= -1) AddRound();
+        if ((int)fTime <= 0) AddRound();
     }
 
     #region TimerUpdate()
@@ -55,7 +55,7 @@ public class TimerPanel : MonoBehaviour
 
         roundBuilder.Clear();
         Round++;
-        fTime = 60.0f;
+        fTime = 30.0f;
     }
     #endregion
 }

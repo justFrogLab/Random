@@ -1,13 +1,18 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - GameManager
+    - GameSettingManager
+    - GameStart
     - LoadingScenceManager
-    - Tester
     - TimerPanel
+    - UIManager
+    - ValuePanel
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
+    - TMPro.TMP_InputField
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
@@ -19,9 +24,14 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.Outline
+    - UnityEngine.UI.RectMask2D
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -33,23 +43,36 @@ ScriptsOnlyBuild:
     - TMPro.TMP_GlyphAdjustmentRecord
     - TMPro.TMP_GlyphPairAdjustmentRecord
     - TMPro.TMP_GlyphValueRecord
+    - TMPro.TMP_InputField/OnChangeEvent
+    - TMPro.TMP_InputField/SelectionEvent
+    - TMPro.TMP_InputField/SubmitEvent
+    - TMPro.TMP_InputField/TextSelectionEvent
+    - TMPro.TMP_InputField/TouchScreenKeyboardEvent
     - TMPro.TMP_Sprite
     - TMPro.TMP_SpriteCharacter
     - TMPro.TMP_SpriteGlyph
     - TMPro.TMP_Style
     - TMPro.VertexGradient
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
+    - UnityEngine.RectOffset
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.Button/ButtonClickedEvent
+    - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.SpriteState
   methodsToPreserve: []
   sceneClasses:
-    Assets/01.Scenes/00.AutoStart.unity:
+    Assets/01.Scenes/00.Start.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -73,25 +96,29 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1572}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 2194}
+      Script: {instanceID: 2212}
     - Class: 114
-      Script: {instanceID: 2628}
+      Script: {instanceID: 2648}
     - Class: 114
-      Script: {instanceID: 2854}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 4222}
+      Script: {instanceID: 3176}
     - Class: 114
-      Script: {instanceID: 4492}
+      Script: {instanceID: 3178}
     - Class: 114
-      Script: {instanceID: 5258}
+      Script: {instanceID: 4244}
     - Class: 114
-      Script: {instanceID: 5872}
+      Script: {instanceID: 4514}
     - Class: 114
-      Script: {instanceID: 6368}
+      Script: {instanceID: 5282}
     - Class: 114
-      Script: {instanceID: 28676}
+      Script: {instanceID: 5896}
+    - Class: 114
+      Script: {instanceID: 6048}
+    - Class: 114
+      Script: {instanceID: 6392}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -108,7 +135,74 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/01.Scenes/01.Lobby.unity:
+    Assets/01.Scenes/01.Setting.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1578}
+    - Class: 114
+      Script: {instanceID: 1590}
+    - Class: 114
+      Script: {instanceID: 1718}
+    - Class: 114
+      Script: {instanceID: 2648}
+    - Class: 114
+      Script: {instanceID: 2874}
+    - Class: 114
+      Script: {instanceID: 3178}
+    - Class: 114
+      Script: {instanceID: 4230}
+    - Class: 114
+      Script: {instanceID: 4908}
+    - Class: 114
+      Script: {instanceID: 5066}
+    - Class: 114
+      Script: {instanceID: 5282}
+    - Class: 114
+      Script: {instanceID: 5896}
+    - Class: 114
+      Script: {instanceID: 6048}
+    - Class: 114
+      Script: {instanceID: 6392}
+    - Class: 114
+      Script: {instanceID: 6750}
+    - Class: 114
+      Script: {instanceID: 24474}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/01.Scenes/02.Lobby.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -138,21 +232,29 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1572}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 2628}
+      Script: {instanceID: 2258}
     - Class: 114
-      Script: {instanceID: 2854}
+      Script: {instanceID: 2648}
     - Class: 114
-      Script: {instanceID: 5258}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 5872}
+      Script: {instanceID: 3178}
     - Class: 114
-      Script: {instanceID: 6024}
+      Script: {instanceID: 5282}
     - Class: 114
-      Script: {instanceID: 6368}
+      Script: {instanceID: 5896}
     - Class: 114
-      Script: {instanceID: 39404}
+      Script: {instanceID: 6048}
+    - Class: 114
+      Script: {instanceID: 6392}
+    - Class: 114
+      Script: {instanceID: 24474}
+    - Class: 114
+      Script: {instanceID: 28902}
+    - Class: 114
+      Script: {instanceID: 29160}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -191,21 +293,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1572}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 2628}
+      Script: {instanceID: 2648}
     - Class: 114
-      Script: {instanceID: 2854}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 5258}
+      Script: {instanceID: 4674}
     - Class: 114
-      Script: {instanceID: 5872}
+      Script: {instanceID: 5282}
     - Class: 114
-      Script: {instanceID: 6024}
+      Script: {instanceID: 5896}
     - Class: 114
-      Script: {instanceID: 6368}
+      Script: {instanceID: 6048}
     - Class: 114
-      Script: {instanceID: 28228}
+      Script: {instanceID: 6392}
+    - Class: 114
+      Script: {instanceID: 6750}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -229,6 +333,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UIElements
     className: PanelRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 36fbf876e9bf695f0115bcedf6ea2760
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameSettingManager
   - hash:
       serializedVersion: 2
       Hash: a6e561615949734e9f12f9b61661f43e
@@ -301,6 +411,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerUpMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 168e2ac11ee68018cb478081a39eac59
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TimerPanel
   - hash:
       serializedVersion: 2
       Hash: 91d258529db2b5060a913f2afcea1a21
@@ -427,6 +543,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ToggleGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameStart
   - hash:
       serializedVersion: 2
       Hash: 69415240821be7986b27e72bf9609a30
@@ -619,6 +741,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnCancelMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 8d8a91705e739c0a1183ae8b10693cb4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadingScenceManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -999,25 +1127,26 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 8d8a91705e739c0a1183ae8b10693cb4
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: LoadingScenceManager
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Tester
+    className: UIManager
   - hash:
       serializedVersion: 2
-      Hash: 168e2ac11ee68018cb478081a39eac59
+      Hash: 2aac7bfa65b3e3cca6129ac0dbdb5c77
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: TimerPanel
+    className: ValuePanel
   platform: 19
   scenePathNames:
-  - Assets/01.Scenes/00.AutoStart.unity
-  - Assets/01.Scenes/01.Lobby.unity
+  - Assets/01.Scenes/00.Start.unity
+  - Assets/01.Scenes/01.Setting.unity
+  - Assets/01.Scenes/02.Lobby.unity
   - Assets/01.Scenes/LoadingScene.unity
   playerPath: C:/Users/Administrator/Desktop/BuildFolder/MiniProject.exe

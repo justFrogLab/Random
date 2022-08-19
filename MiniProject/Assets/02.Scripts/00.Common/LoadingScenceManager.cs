@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -28,7 +29,6 @@ public class LoadingScenceManager : MonoBehaviour
         while (!op.isDone)
         {
             yield return null;
-            //Debug.Log($"op.progress ::: {op.progress}");
             timer += Time.deltaTime;
             if (op.progress < 0.9f)
             {
